@@ -1,6 +1,6 @@
 services:
   app:
-    container_name: "app"
+    container_name: "application-server"
     image: "us-east1-docker.pkg.dev/greg-vertex-ai-playground/gj-napari-xpra/napari-xpra:latest"
     restart: always
     volumes:
