@@ -2,7 +2,7 @@ version: '2.4'
 services:
   app:
     container_name: "application-server"
-    image: ghcr.io/napari/napari-xpra
+    image: "us-east1-docker.pkg.dev/greg-vertex-ai-playground/gj-napari-xpra/napari-xpra"
     restart: always
     volumes:
       - ..:/workspace:cached
