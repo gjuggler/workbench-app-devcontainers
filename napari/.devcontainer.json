@@ -4,7 +4,7 @@
   "service": "app",
   "shutdownAction": "none",
   // Open the sub-folder with the source code. Modify the folder name to your app folder.
-  "workspaceFolder": "/workspace/napari",
+  "workspaceFolder": "/workspace",
   
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},

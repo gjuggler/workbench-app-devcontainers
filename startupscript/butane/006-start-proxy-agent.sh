@@ -24,7 +24,7 @@ if [[ -z "${PORT}" ]]; then
     exit 1
 fi
 
-echo "Proxy agent port should listen at port ${PORT}"
+echo "Proxy agent3 port should listen at port ${PORT}"
 
 # shellcheck source=/dev/null
 source /home/core/agent.env
