@@ -30,7 +30,7 @@ echo "Proxy agent port should listen at port ${PORT}"
 source /home/core/agent.env
 options=()
 if [[ "${COMPUTE_PLATFORM^^}" == "GCE" ]]; then
-    options+=("--backend=${BACKEND}")
+    options+=("--backend=${BACKEND} --debug=true")
 fi
 docker start "proxy-agent" 2>/dev/null \
   || docker run \
