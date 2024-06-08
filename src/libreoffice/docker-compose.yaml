@@ -7,7 +7,7 @@ services:
       - .:/workspace:cached
     ports:
       - '3000:3000'
-    networks:
+    networks: 
       - app-network
     cap_add:
       - SYS_ADMIN
@@ -15,7 +15,8 @@ services:
       - /dev/fuse
     security_opt:
       - apparmor:unconfined
+    environment:
+      - KASM_DEBUG=1
 networks:
   app-network:
     external: true
-  
