@@ -1,12 +1,12 @@
 services:
   app:
     container_name: "application-server"
-    image: "kasmweb/ubuntu-bionic-desktop:latest"
+    image: "kasmweb/only-office:1.15.0"
     restart: always
     volumes:
       - .:/workspace:cached
     ports:
-      - '6901:6901'
+      - "6901:6901"
     networks: 
       - app-network
     cap_add:
@@ -16,7 +16,7 @@ services:
     security_opt:
       - apparmor:unconfined
     environment:
-      - VNCOPTIONS="-log *:stderr:100"
+      - VNCOPTIONS="-log *:stderr:100 -sslOnly false"
 networks:
   app-network:
     external: true
