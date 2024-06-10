@@ -1,12 +1,12 @@
 services:
   app:
     container_name: "application-server"
-    image: "kasmweb/only-office:1.15.0"
+    image: "docker.io/library/kasmweb/only-office:1.15.0-rolling"
     restart: always
     volumes:
       - .:/workspace:cached
     ports:
-      - "6901:6901"
+      - '6901:6901'
     networks: 
       - app-network
     cap_add:
@@ -16,7 +16,8 @@ services:
     security_opt:
       - apparmor:unconfined
     environment:
-      - VNCOPTIONS="-log *:stderr:100 -sslOnly false"
+      VNC_PW: "password"
+      VNCOPTIONS: "-log *:stderr:100 -sslOnly false"
 networks:
   app-network:
     external: true
