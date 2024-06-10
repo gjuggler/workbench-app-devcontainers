@@ -1,7 +1,7 @@
 services:
   app:
     container_name: "application-server"
-    image: "docker.io/library/kasmweb/only-office:1.15.0-rolling"
+    image: "kasmweb/only-office:1.15.0-rolling"
     restart: always
     volumes:
       - .:/workspace:cached
