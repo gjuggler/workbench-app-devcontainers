@@ -1,0 +1,22 @@
+services:
+  app:
+    container_name: "application-server"
+    image: "kasmweb/ubuntu-bionic-desktop:latest"
+    restart: always
+    volumes:
+      - .:/workspace:cached
+    ports:
+      - '6901:6901'
+    networks: 
+      - app-network
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    security_opt:
+      - apparmor:unconfined
+    environment:
+      - VNCOPTIONS="-log *:stderr:100"
+networks:
+  app-network:
+    external: true
