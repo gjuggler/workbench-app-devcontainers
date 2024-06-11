@@ -1,0 +1,18 @@
+services:
+  app:
+    container_name: "application-server"
+    image: "theasp/novnc"
+    restart: always
+    volumes:
+      - .:/workspace:cached
+    ports:
+      - '8080:8080'
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    security_opt:
+      - apparmor:unconfined
+    environment:
+      VNC_PW: "password"
+      VNCOPTIONS: "-log *:stderr:100 -sslOnly false"
