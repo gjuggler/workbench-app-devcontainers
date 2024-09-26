@@ -1,7 +1,7 @@
 services:
   app:
     container_name: "application-server"
-    image: "kasmweb/only-office:1.15.0-rolling"
+    image: "kasmweb/ubuntu-noble-dind:1.16.0"
     restart: always
     volumes:
       - .:/workspace:cached
@@ -17,7 +17,7 @@ services:
       - apparmor:unconfined
     environment:
       VNC_PW: "password"
-      VNCOPTIONS: "-log *:stderr:100 -sslOnly false"
+      VNCOPTIONS: "-sslOnly false"
 networks:
   app-network:
     external: true
